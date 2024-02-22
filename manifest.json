@@ -1,0 +1,36 @@
+{
+  "name": "Memory Dark Mode",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "default_icon": "icon.png",
+  "icons":{
+      "16": "img/icon16.png",
+      "32": "img/icon32.png",
+      "48": "img/icon48.png",
+      "128": "img/icon128.png"
+    },
+  "description": "Bored of looking at websites the same way? Meet Memory Dark Mode, a chrome extension that can change your website from dark mood to light mode and vice versa! :) ",
+  "background": {
+      "scripts": [
+          "popup.js"
+      ],
+      "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["autoRun.js"]
+    }
+  ],
+  "browser_action": {
+      "default_title": "Memory Dark Mode",
+      "default_icon": "icon.jpg",
+      "default_popup": "popup.html"
+  },
+  "permissions": [
+      "https://*/*",
+      "http://*/*",
+      "tabs",
+      "storage"
+  ]
+}
